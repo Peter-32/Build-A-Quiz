@@ -15,20 +15,29 @@ print(html);
 var guess;
 var numCorrect = 0;
 var questions = [
-  ["In the children's book series, where is Paddington Bear originally from?", "PERU"],
-  ["What letter must appear at the beginning of the registration number of all non-military aircraft in the U.S.?", "N"],
-  ["Who delivered the less famous two-hour speech that preceded Abraham Lincoln's two-minute Gettysburg Address?", "EDWARD EVERETT"]
+  {
+    question: "In the children's book series, where is Paddington Bear originally from?", 
+    answer: "PERU"
+  },
+  {
+    question: "What letter must appear at the beginning of the registration number of all non-military aircraft in the U.S.?", 
+    answer: "N"
+  },
+  {
+    question: "Who delivered the less famous two-hour speech that preceded Abraham Lincoln's two-minute Gettysburg Address?", 
+    answer: "EDWARD EVERETT"
+  }
 ];
 var questionsCorrect = [];
 var questionsWrong = [];
 
 for (var i = 0; i < questions.length; i++) {
-    guess = prompt(questions[i][0]);
-    if (guess.toUpperCase() === questions[i][1]) {
+    guess = prompt(questions[i].question);
+    if (guess.toUpperCase() === questions[i].answer) {
     	numCorrect++;
-    	questionsCorrect.push(questions[i][0]);    	
+    	questionsCorrect.push(questions[i].question);    	
     } else {
-    	questionsWrong.push(questions[i][0]);
+    	questionsWrong.push(questions[i].question);
     }
 }
 
